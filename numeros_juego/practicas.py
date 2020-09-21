@@ -1,8 +1,11 @@
+#importar librerias
 import random
 
-guessesTaken = 0
+#variables
+intento = 0
 minNumber = 1
 maxNumber = 20
+
 
 print('Hola Cual es tu nombre: ')
 usrname = input()
@@ -10,12 +13,13 @@ usrname = input()
 number = random.randint(minNumber, maxNumber)
 print('hola, ' + usrname + ' estoy pensando en numero entre '+ str(minNumber) + ' y ' + str(maxNumber))
 
-while guessesTaken < 6:
+#bucle   condicion
+while intento < 6:
     print("intentalo: ")
     guess = input()
     guess = int(guess)
 
-    guessesTaken = guessesTaken + 1
+    intento = intento + 1
 
     if guess < number:
         print("No es un numero mas alto")
@@ -28,8 +32,8 @@ while guessesTaken < 6:
         break
 
 if guess == number:
-    guessesTaken = str(guessesTaken)
-    print('buen trabajo' + usrname + '! el numero de intento es '+ guessesTaken + ' intentos ')
+    intento = str(intento)
+    print('buen trabajo' + usrname + '! el numero de intento es '+ intento + ' intentos ')
 
 if guess != number:
     number = str(number)
